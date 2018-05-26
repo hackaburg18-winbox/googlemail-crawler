@@ -103,6 +103,7 @@ async function listMessages(auth) {
                 format: "metadata"
             });
             await putIfNotExists(redisClient, mContent.id, JSON.stringify({
+                source: "gmail",
                 author: mContent.payload.headers.find(e => e.name === "From").value,
                 title: mContent.payload.headers.find(e => e.name === "Subject").value,
                 text: mContent.snippet,
