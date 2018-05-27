@@ -10,7 +10,7 @@ const TOKEN_PATH = 'enc.credentials.txt';
 const SECRET_PATH = 'enc.client_secret.txt';
 const REDIS_SET_NAME = 'dashboard';
 
-var redisHost = process.env.REDIS_HOST;
+var redisHost = process.env.WINBOX_REDIS_HOSTNAME;
 if (!redisHost) {
     redisHost = 'localhost';
 }
